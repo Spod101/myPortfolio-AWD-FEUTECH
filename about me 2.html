@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon-32x32.png">
+    <!-- icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            scroll-behavior: smooth;
+            list-style: none;
+        }
+
+        html {
+            height: 100%;
+            background: #292727;
+        }
+
+        body {
+            font-family: 'Poppins';
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .about {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            padding-top: 20px;
+            padding-right: 70px;
+            padding-left: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 999;
+            transition: top 0.3s;
+        }
+
+        .navbar.hide {
+            top: -100px;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .navbar a {
+            color: #f5f0f0;
+            font-weight: 600;
+        }
+
+        .navbar .nav-links ul {
+            display: flex;
+        }
+
+        .navbar .nav-links ul {
+            display: flex;
+        }
+
+        .navbar .nav-links ul li {
+            margin: 0 25px;
+            font-size: 1.4rem;
+        }
+
+        .navbar .nav-links ul li a.active,
+        .navbar .nav-links ul li:hover a {
+            color: #8b7afe;
+        }
+
+        .navbar .menu-burger {
+            display: none;
+            position: absolute;
+            top: 33px;
+            right: 30px;
+            width: 35px;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: justify;
+            max-width: 1200px;
+            margin: auto;
+            padding-top: 120px;
+        }
+
+        .image {
+            flex: 0 0 auto;
+            margin-right: 50px;
+            overflow: hidden;
+            transition: transform 0.8s ease-in-out;
+            padding: 40px;
+        }
+
+        img {
+            width: 500px;
+            height: auto;
+            border-radius: 50px;
+            box-shadow: inset;
+
+        }
+
+        .image:hover {
+            transform: scale(1.1);
+        }
+
+        .text {
+            padding-left: 30px;
+            flex: 1 1 auto;
+            color: #f5f0f0;
+            padding-bottom: 60px;
+        }
+
+        h1 {
+            transition: transform 0.8s ease-in-out, color 0.3s ease-in-out;
+            transform-origin: left center;
+            font-size: 32px;
+            color: #f5f0f0;
+        }
+
+        h1:hover {
+            transform: scale(1.2);
+            color: #532c66;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.5;
+            color: #f5f0f0;
+        }
+
+        section {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url(img/wave.png);
+            background-size: 1000px 100px;
+        }
+
+        .wave.wave1 {
+            animation: animate 10s linear infinite;
+            z-index: 1000;
+            opacity: 1;
+            animation-delay: 0s;
+            bottom: -15px;
+        }
+
+        .wave.wave2 {
+            animation: animate2 5s linear infinite;
+            z-index: 919;
+            opacity: 0.5;
+            animation-delay: -5s;
+            bottom: -25px;
+        }
+
+        .wave.wave3 {
+            animation: animate3 5s linear infinite;
+            z-index: 988;
+            opacity: 0.2;
+            animation-delay: -2s;
+            bottom: -5px;
+        }
+
+        @keyframes animate {
+            0% {
+                background-position-x: 0;
+            }
+
+            100% {
+                background-position-x: 1000px;
+            }
+        }
+
+        @keyframes animate2 {
+            0% {
+                background-position-x: 0;
+            }
+
+            100% {
+                background-position-x: -1000px;
+            }
+        }
+
+        @keyframes animate3 {
+            0% {
+                background-position-x: 0;
+            }
+
+            100% {
+                background-position-x: -1000px;
+            }
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            border-radius: 50%;
+            background-color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: #272929;
+        }
+
+        .social-icon i {
+            color: #532c66;
+            font-size: 24px;
+        }
+
+
+        @media screen and (max-width: 1050px) {
+            .navbar {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                transition: top 0.3s, opacity 0.3s;
+                padding-bottom: 80px;
+            }
+
+            .navbar a {
+                color: #272929;
+                font-weight: 600;
+            }
+
+            .navbar .logo {
+                position: absolute;
+                top: 25px;
+                left: 30px;
+            }
+
+            .navbar .logo img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .navbar .menu-burger {
+                display: block;
+                border-radius: 0;
+            }
+
+            .nav-links {
+                top: 0;
+                left: 0;
+                position: absolute;
+                background-color: rgba(255, 255, 255, 0.6);
+                backdrop-filter: blur(8px);
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: -100%;
+                transition: all 0.5s ease;
+            }
+
+            .nav-links.mobile-menu {
+                margin-left: 0;
+                overflow-y: hidden;
+            }
+
+            body.mobile-menu-open {
+                overflow: hidden;
+            }
+
+            .nav-links ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar .nav-links ul li {
+                margin: 25px 0;
+                font-size: 1.2rem;
+            }
+
+            .content {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding-top: 230%;
+                padding-right: 50px;
+                padding-left: 50px;
+                height: calc(100vh - 250px);
+                overflow-y: scroll;
+                text-align: center;
+                margin-top: 90px;
+            }
+
+            .image {
+                margin-right: 0;
+                margin-bottom: 30px;
+                padding-top: 400px;
+            }
+
+            img {
+                width: 100%;
+                max-width: 400px;
+                height: auto;
+                border-radius: 20px;
+            }
+
+            .text {
+                padding-left: 0;
+                margin-bottom: 550px;
+                max-width: 3000px;
+            }
+
+            h1 {
+                font-size: 28px;
+                margin-bottom: 20px;
+                margin-top: 30px;
+                transition: transform 0.8s ease-in-out, color 0.3s ease-in-out;
+                transform-origin: center;
+                font-size: 32px;
+                color: #f5f0f0;
+            }
+
+            p {
+                padding-left: 20px;
+                padding-right: 20px;
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            .last {
+                padding-left: 20px;
+                padding-right: 20px;
+                font-size: 16px;
+                margin-bottom: 110%;
+            }
+
+            .wave {
+                position: absolute;
+                bottom: -20px;
+                left: 0;
+                width: 100%;
+                height: 100px;
+                background: url(img/wave.png);
+                background-size: 1000px 100px;
+                margin-top: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="about">
+        <nav class="navbar">
+            <a class="logo">
+                <img src="img/logo.png" alt="logo">
+            </a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about me 2.html" class="active">About me</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="projects.html">Project</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="credits.html">Credits</a></li>
+                </ul>
+            </div>
+            <img src="img/menu-btn.png" alt="bar" class="menu-burger">
+        </nav>
+
+        <div class="content">
+            <div class="image">
+                <img src="img/about.png" alt="profile">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/dalet.12/" class="social-icon"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://twitter.com/cdalet_" class="social-icon"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.instagram.com/d.alettt/" class="social-icon"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://discord.com" class="social-icon"><i class='bx bxl-discord'></i></a>
+                </div>
+            </div>
+            
+            <div class="text">
+                <h1>About Me</h1>
+                <p><br>Hello world! I'm Clayton Dale Tambis. a student who wants to be a web developer and loves
+                    creating beautiful and functional websites. I have experience in <em>HTML, CSS, JavaScript, Java,
+                        Python, C++, and C#</em>, and I'm always eager to learn new technologies to enhance my skills.
+                    In my free time, I enjoy exploring new coding techniques and contributing to open-source projects.
+                </p>
+                <p><br>In addition to my student life, I am an avid gamer. I have a deep passion for video games and
+                    love immersing myself in various gaming worlds. Gaming has not only been a source of entertainment
+                    for me but has also inspired me in my web development journey. The creativity, storytelling, and
+                    problem-solving aspects of games have influenced my approach to building engaging and interactive
+                    user experiences. Dancing on stages have been also one of my hobbies.</p>
+                <p class="last"><br>Outside of school, I love spending time in nature, exploring biking trails, and
+                    capturing
+                    beautiful moments with my camera.</p>
+            </div>
+        
+    </div>
+            <section>
+                <div class="wave wave1"></div>
+                <div class="wave wave2"></div>
+                <div class="wave wave3"></div>
+            </section>
+        
+
+    </div>
+
+    <script>
+        const menuburger = document.querySelector(".menu-burger");
+        const navLinks = document.querySelector(".nav-links");
+        const navbar = document.querySelector(".navbar");
+        const waves = document.querySelectorAll(".wave");
+
+        let prevScrollPos = window.pageYOffset;
+        let isMobile = window.innerWidth <= 1050;
+
+        menuburger.addEventListener("click", () => {
+            navLinks.classList.toggle("mobile-menu");
+        });
+
+
+    </script>
+</body>
+
+</html>
