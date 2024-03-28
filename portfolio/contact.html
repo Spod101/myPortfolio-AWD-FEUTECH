@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon-32x32.png">
+    <!-- icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            scroll-behavior: smooth;
+            list-style: none;
+        }
+
+        html {
+            height: 100%;
+            background: #272929;
+            overflow-y: hidden;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            animation: fadeInAnimation ease 5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            padding-top: 20px;
+            padding-right: 70px;
+            padding-left: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 999;
+            transition: top 0.8s;
+        }
+
+        .navbar.hidden {
+            top: -100px;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .navbar a {
+            color: #272929;
+            font-weight: 600;
+        }
+
+        .navbar .nav-links ul {
+            display: flex;
+        }
+
+        .navbar .nav-links ul {
+            display: flex;
+        }
+
+        .navbar .nav-links ul li {
+            margin: 0 25px;
+            font-size: 1.4rem;
+        }
+
+        .navbar .nav-links ul li a.active,
+        .navbar .nav-links ul li:hover a {
+            color: #8b7afe;
+        }
+
+        .navbar .menu-burger {
+            display: none;
+            position: absolute;
+            top: 33px;
+            right: 30px;
+            width: 35px;
+        }
+
+        .contact {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        .contact::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/bg.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        .contact-title {
+            color: #532c66;
+            font-size: 62px;
+            margin-bottom: 1%;
+        }
+
+        .contact-form {
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+            background-color: #f5f0f0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 98%;
+            padding: 8px;
+            border: 1px solid #cccccccb;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            height: 200px;
+            resize: vertical;
+        }
+
+        .form-group .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .form-group .success-message {
+            color: green;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .form-group .error {
+            border-color: red;
+        }
+
+        .form-group .success {
+            border-color: green;
+        }
+
+        .form-group .btn {
+            display: inline-block;
+            background-color: #532c66;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.5s;
+        }
+
+        .form-group .btn:hover {
+            background-color: #5f52b1;
+        }
+
+        @media screen and (max-width: 1050px) {
+            body {
+                overflow-y: scroll;
+            }
+            .navbar {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                transition: top 0.3s, opacity 0.3s;
+                padding-bottom: 80px;
+            }
+
+            .navbar a {
+                color: #272929;
+                font-weight: 600;
+            }
+
+            .navbar .logo {
+                position: absolute;
+                top: 25px;
+                left: 30px;
+            }
+
+            .navbar .logo img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .navbar .menu-burger {
+                display: block;
+                border-radius: 0;
+            }
+
+            .nav-links {
+                top: 0;
+                left: 0;
+                position: absolute;
+                background-color: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(8px);
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: -100%;
+                transition: all 0.5s ease;
+            }
+
+            .nav-links.mobile-menu {
+                margin-left: 0;
+                overflow-y: hidden;
+            }
+
+            body.mobile-menu-open {
+                overflow: hidden;
+            }
+
+            .nav-links ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar .nav-links ul li {
+                margin: 25px 0;
+                font-size: 1.2rem;
+            }
+
+            .contact-title {
+                color: #532c66;
+                font-size: 62px;
+                margin-bottom: 15%;
+            }
+
+            .form-group label {
+                display: block;
+                font-size: 14px;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                width: 95%;
+                padding: 8px;
+                border: 1px solid #cccccccb;
+                border-radius: 4px;
+                font-size: 14px;
+            }
+
+            .form-group textarea {
+                height: 80px;
+                resize: vertical;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="contacts">
+        <nav class="navbar">
+            <a class="logo">
+                <img src="img/logo.png" alt="logo">
+            </a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about me 2.html">About me</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="projects.html">Project</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="credits.html">Credits</a></li>
+                </ul>
+            </div>
+            <img src="img/menu-btn.png" alt="bar" class="menu-burger">
+        </nav>
+
+        <div class="contact">
+            <h1 class="contact-title">Contact Us</h1>
+            <form class="contact-form" id="contact-form" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error-message" id="name-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="email-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <div class="error-message" id="message-error"></div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Send Message</button>
+                    <div class="success-message" id="success-message"></div>
+                </div>
+            </form>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2023 Your Website. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="icon"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="icon"><i class="bx bxl-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const menuburger = document.querySelector(".menu-burger");
+        const navLinks = document.querySelector(".nav-links");
+        const navbar = document.querySelector(".navbar");
+        const waves = document.querySelectorAll(".wave");
+
+        let prevScrollPos = window.pageYOffset;
+        let isMobile = window.innerWidth <= 1050;
+
+        menuburger.addEventListener("click", () => {
+            navLinks.classList.toggle("mobile-menu");
+        });
+
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector(".navbar");
+            if (window.pageYOffset === 0) {
+                header.classList.remove("hidden");
+            } else {
+                header.classList.add("hidden");
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var menuBurger = document.querySelector('.menu-burger');
+            var body = document.querySelector('body');
+
+            menuBurger.addEventListener('click', function () {
+                body.classList.toggle('mobile-menu-open');
+            });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var nameInput = document.getElementById('name');
+            var emailInput = document.getElementById('email');
+            var messageInput = document.getElementById('message');
+            var nameError = document.getElementById('name-error');
+            var emailError = document.getElementById('email-error');
+            var messageError = document.getElementById('message-error');
+            var successMessage = document.getElementById('success-message');
+
+            nameError.textContent = '';
+            emailError.textContent = '';
+            messageError.textContent = '';
+            successMessage.textContent = '';
+
+            var isValid = true;
+
+            if (nameInput.value.trim() === '') {
+                nameError.textContent = 'Please enter your name.';
+                nameInput.classList.add('error');
+                isValid = false;
+            } else {
+                nameInput.classList.remove('error');
+            }
+
+            if (emailInput.value.trim() === '') {
+                emailError.textContent = 'Please enter your email.';
+                emailInput.classList.add('error');
+                isValid = false;
+            } else {
+                emailInput.classList.remove('error');
+            }
+
+            if (messageInput.value.trim() === '') {
+                messageError.textContent = 'Please enter your message.';
+                messageInput.classList.add('error');
+                isValid = false;
+            } else {
+                messageInput.classList.remove('error');
+            }
+
+            if (isValid) {
+                successMessage.textContent = 'Your message has been sent!';
+                nameInput.value = '';
+                emailInput.value = '';
+                messageInput.value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>

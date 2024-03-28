@@ -1,0 +1,67 @@
+`<!DOCTYPE html>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Responsive Contact Form </title>
+	<link rel="stylesheet" type="text/css" href="css/external_registration.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="formBx">
+				<form>
+					<h2>REGISTRATION FORM</h2>
+					<div class="inputBox">
+						<input type="text" name="" required="required">
+						<span>Full Name</span>
+					</div>
+					<div class="inputBox">
+						<select name="GENDER" required>
+							<option value="" disabled selected></option>
+							<option value="option1">Female</option>
+							<option value="option2">Male</option>
+							<option value="option3">Prefer not to say</option>
+						</select>
+						<span>Gender</span>
+					</div>
+					<div class="inputBox">
+						<input type="text" pattern="\d{2}/\d{2}/\d{4}" title="Please enter a valid date format (mm/dd/yyyy)" required>
+						<span>Date of Birth (mm/dd/yyyy)</span>
+					</div>
+					<div class="inputBox">
+						<select name="CIVIL SERVICE" required>
+							<option value="" disabled selected></option>
+								<option value="option1">Single</option>
+								<option value="option2">Married</option>
+								<option value="option3">Separated</option>
+								<option value="option4">Widowed</option>
+						</select>
+						<span>Civil Status</span>
+					</div>
+					<div class="inputBox">
+						<input type="text" name="" required="required">
+						<span>Nationality</span>
+					</div>
+					<div class="inputBox">
+						<input type="text" name="" required="required">
+						<span>Home Address</span>
+					</div>
+					<div class="inputBox">
+						<input type="email" name="" required="required">
+						<span>Email Address</span>
+					</div>
+					<div class="inputBox">
+						<input type="text" name="" required="required">
+						<span>Phone Number</span>
+					</div>
+					<div class="inputBox">
+						<input type="submit" value="Send" name="">
+					</div>
+					
+				</form>
+			</div>
+			<div class="imgBx">
+			<img src="img/profle.png">
+			</div>
+		</div>
+	</body>
+</html>

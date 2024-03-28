@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon-32x32.png">
+    <!-- icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            scroll-behavior: smooth;
+            list-style: none;
+        }
+
+        html {
+            height: 100%;
+            background: #272929;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            padding-top: 20px;
+            padding-right: 70px;
+            padding-left: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 999;
+            transition: top 0.8s;
+        }
+
+        .navbar.hidden {
+            top: -100px;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .navbar a {
+            color: #f5f0f0;
+            font-weight: 600;
+        }
+
+        .navbar .nav-links ul {
+            display: flex;
+        }
+
+        .navbar .nav-links ul {
+            display: flex;
+        }
+
+        .navbar .nav-links ul li {
+            margin: 0 25px;
+            font-size: 1.4rem;
+        }
+
+        .navbar .nav-links ul li a.active,
+        .navbar .nav-links ul li:hover a {
+            color: #8b7afe;
+        }
+
+        .navbar .menu-burger {
+            display: none;
+            position: absolute;
+            top: 33px;
+            right: 30px;
+            width: 35px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .project {
+            background-color: #f5f0f0;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: -10px 10px #88888898;
+        }
+
+        .project-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            margin-bottom: 20px;
+        }
+
+        .project-image {
+            width: 150px;
+            max-height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            display: inline-block;
+            background-color: #333;
+            color: #f5f0f0;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .project-link:hover {
+            background-color: #555;
+        }
+
+        h1 {
+            margin-top: 110px;
+            font-size: 60px;
+            text-align: center;
+            color: #f5f0f0;
+            text-shadow: -5px 3px #5a2d6f;
+        }
+
+        .footer {
+            background-color: #272929;
+            color: #f5f0f0;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer p {
+            margin-bottom: 5px;
+        }
+
+        .footer .social-icons {
+            margin-top: 10px;
+        }
+
+        .footer .social-icons a {
+            color: #f5f0f0;
+            margin: 0 5px;
+            font-size: 18px;
+        }
+
+        .footer .social-icons a:hover {
+            color: #8b7afe;
+        }
+
+        @media screen and (max-width: 1050px) {
+            .navbar {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                transition: top 0.3s, opacity 0.3s;
+                padding-bottom: 80px;
+            }
+
+            .navbar a {
+                color: #272929;
+                font-weight: 600;
+            }
+
+            .navbar .logo {
+                position: absolute;
+                top: 25px;
+                left: 30px;
+            }
+
+            .navbar .logo img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .navbar .menu-burger {
+                display: block;
+                border-radius: 0;
+            }
+
+            .nav-links {
+                top: 0;
+                left: 0;
+                position: absolute;
+                background-color: rgba(255, 255, 255, 0.6);
+                backdrop-filter: blur(8px);
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: -100%;
+                transition: all 0.5s ease;
+            }
+
+            .nav-links.mobile-menu {
+                margin-left: 0;
+                overflow-y: hidden;
+            }
+
+            body.mobile-menu-open {
+                overflow: hidden;
+            }
+
+            .nav-links ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar .nav-links ul li {
+                margin: 25px 0;
+                font-size: 1.2rem;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                animation: fadeInAnimation ease 3s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+                padding-bottom: 10px;
+            }
+
+            .container {
+                max-width: 100%;
+                margin-top: 20px;
+                margin-bottom: 40px;
+                padding: 30px;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                grid-gap: 30px;
+            }
+
+            h1 {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .project-image {
+                max-width: 100%;
+                max-height: 200px;
+                margin-bottom: 10px;
+            }
+
+            .project .project-title {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="gallery">
+        <nav class="navbar">
+            <a class="logo">
+                <img src="img/logo.png" alt="logo">
+            </a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about me 2.html">About me</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="projects.html" class="active">Project</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="credits.html">Credits</a></li>
+                </ul>
+            </div>
+            <img src="img/menu-btn.png" alt="bar" class="menu-burger">
+        </nav>
+
+        <h1>Project Showcase</h1>
+
+        <div class="container">
+            <div class="project">
+                <h2 class="project-title">Resume Project</h2>
+                <img class="project-image" src="img/project1.jpg" alt="Project 1">
+                <a class="project-link" href="projects/1/TAMBIS_LAB2.html">View Project</a>
+            </div>
+
+            <div class="project">
+                <h2 class="project-title">Registration Form</h2>
+                <img class="project-image" src="img/project2.png" alt="Project 2" style="width: auto; height: auto;">
+                <a class="project-link" href="projects/2/TAMBIS_LAB3.html">View Project</a>
+            </div>
+
+            <div class="project">
+                <h2 class="project-title">Bootstrap</h2>
+                <img class="project-image" src="img/project3.png" alt="Project 3" style="width: auto; height: auto;">
+                <a class="project-link" href="projects/3/index.html">View Project</a>
+            </div>
+
+            <div class="project">
+                <h2 class="project-title">Best Friends</h2>
+                <img class="project-image" src="img/project4.png" alt="Project 4" style="width: auto; height: auto;">
+                <a class="project-link" href="projects/4/index.html">View Project</a>
+            </div>
+
+            <div class="project">
+                <h2 class="project-title">JavaScript</h2>
+                <img class="project-image" src="img/project5.png" alt="Project 5" style="width: auto; height: auto;">
+                <a class="project-link" href="projects/5/Registration.html">View Project</a>
+            </div>
+
+            <div class="project">
+                <h2 class="project-title">FEU login</h2>
+                <img class="project-image" src="img/project6.png" alt="Project 6" style="width: auto; height: auto;">
+                <a class="project-link" href="projects/6/FA FINAL.html">View Project</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2023 claytondale. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/dalet.12/" class="bx bxl-facebook"></a>
+            <a href="https://twitter.com/cdalet_" class="bx bxl-twitter"></a>
+            <a href="https://www.instagram.com/d.alettt/" class="bx bxl-instagram"></a>
+            <a href="https://discord.com" class="bx bxl-discord"></a>
+        </div>
+    </div>
+
+    <script>
+        const menuburger = document.querySelector(".menu-burger");
+        const navLinks = document.querySelector(".nav-links");
+        const navbar = document.querySelector(".navbar");
+        const waves = document.querySelectorAll(".wave");
+
+        let prevScrollPos = window.pageYOffset;
+        let isMobile = window.innerWidth <= 1050;
+
+        menuburger.addEventListener("click", () => {
+            navLinks.classList.toggle("mobile-menu");
+        });
+
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector(".navbar");
+            if (window.pageYOffset === 0) {
+                header.classList.remove("hidden");
+            } else {
+                header.classList.add("hidden");
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var menuBurger = document.querySelector('.menu-burger');
+            var body = document.querySelector('body');
+
+            menuBurger.addEventListener('click', function () {
+                body.classList.toggle('mobile-menu-open');
+            });
+        });
+
+    </script>
+</body>
+
+</html>

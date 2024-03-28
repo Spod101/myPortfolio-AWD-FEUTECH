@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Log In to Canvas</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+
+            body {
+                font-family: "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+                background-color: #1b4d32;
+                color: #fff;
+                background-image: url('https://i.ibb.co/MGhb8SJ/bg2.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+            }
+
+            .gradient {
+                height: 100vh;
+                background: linear-gradient(to top, rgba(45, 59, 69, 1) 0%, rgba(0, 123, 255, 0) 25%);
+            }
+
+            .logo {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .logo a {
+                position: relative;
+                top: 30px;
+                color: #fff;
+                text-decoration: underline;
+                margin-left: 110px;
+                font-size: 13px;
+            }
+
+            .logo img {
+                margin-top: 60px;
+                width: 159px;
+                height: 212px;
+            }
+
+            #login_form {
+                margin-left: 95px;
+                width: 68%;
+                height: 40%;
+                font-size: 16px;
+            }
+            .form-control:focus {
+                border-color: #1b5e3d; 
+                box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+            }
+
+
+            .forgot {
+                font-size: 15px;
+                color: #fff;
+                text-decoration: underline;
+            }
+
+            .forgot:hover{
+                font-size: 15px;
+                color: #fff;
+                text-decoration: underline;
+            }
+
+            .outline-button {
+                border: 2px solid #fff;
+                border-radius: 5px;
+                background-color: transparent;
+                color: #fff;
+                padding: 5px 30px;
+                cursor: pointer;
+            }
+
+            .form-check-label {
+                font-size: 14px;
+            }
+
+            .outline-button:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: #fff;
+            }
+
+            .footer-link {
+                font-size: 11px;
+                color: #fff;
+                text-decoration: underline;
+                padding: 6px;
+                
+            }
+
+            .custom-margin{
+                margin-top: 60px;
+            }
+
+            .footer-link:hover {
+                font-size: 11px;
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .footer-line {
+                border: none;
+                height: 1px;
+                background-color: #fff;
+                margin: 10px 0;
+            }
+
+            .text-center img{
+                height: 30px;
+                width: 30px;
+                filter: brightness(0) invert(1);
+            }
+            .text-center a{
+                color: #fff;
+                
+            }
+            .text-center a:hover{
+                color: #fff;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="gradient">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="logo">
+                            <img src="https://i.ibb.co/F3Dk9mp/feulogo.png" alt="Far Eastern University">
+                            <a href="#">Browse courses</a>
+                        </div>
+                        <form id="login_form">
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input class="form-control small-input" id="username" autofocus="autofocus" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input class="form-control small-input" type="password">
+                            </div>
+                            <div class="form-group">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                            <label class="form-check-label">Stay signed in</label>
+                                        </div>
+                                        <a class="forgot" href="#">Forgot Password?</a>
+                                    </div>
+                                    <button class="outline-button">Log in</button>
+                                </div>
+                            </div>
+
+                            <hr class="footer-line mt-4">
+
+                            <div class="text-center mt-4">
+                                <a href="#"><img src="https://i.ibb.co/Vw0KTB6/ms-icon.png" alt="Microsoft Logo" class="microsoft-logo">
+                                <span class="login-microsoft">Login with Microsoft</span></a>
+                            </div>
+
+                            <footer class="footer custom-margin text-center">
+                                <a href="http://help.instructure.com/" class="footer-link">Help</a>
+                                <a href="https://feu.instructure.com/privacy_policy" class="footer-link">Privacy Policy</a>
+                                <a href="#" class="footer-link">Acceptable Use Policy</a>
+                                <a href="http://facebook.com/instructure" class="footer-link">Facebook</a>
+                                <a href="http://twitter.com/instructure" class="footer-link">Twitter</a>
+                            </footer>
+
+                            <div class="text-center mt-2">
+                                <a href="http://www.instructure.com" class="ic-Login-footer__logo-link" aria-label="By Instructure">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="110" height="16" viewBox="25 265 743 80">
+                                        <title>Instructure</title>
+                                        <g class="ic-Instructure-Logo">
+                                            <g>
+                                                <polygon class="st0" points="23.8,331.5 72.3,358.8 120.7,331.5 72.3,304.2" fill="#fff" />
+                                                <polygon class="st0" points="98.4,293.7 120.7,281.1 98.3,268.5 76,281.1" fill="#fff" />
+                                                <polygon class="st0" points="94.6,266.4 72.3,253.8 49.9,266.4 72.3,279" fill="#fff" />
+                                                <polygon class="st0" points="68.5,281.1 46.2,268.5 23.8,281.1 46.2,293.7" fill="#fff" />
+                                            </g>
+                                            <g>
+                                                <path class="st0" d="M166.3,344.9v-78.1h12.9v78.1H166.3z" fill="#fff"/>
+                                                <path class="st0" d="M202,344.9v-78.1H215l16.4,48.3v-48.3h11.8v78.1h-12.3l-17.1-50.7v50.7H202z" fill="#fff"/>
+                                                <path class="st0" d="M357.4,278.2h-13v66.7h-12.9v-66.7h-13v-11.4h39V278.2z" fill="#fff"/>
+                                                <path class="st0" d="M404.6,344.9l-9.9-31.1h-6.5v31.1h-12.9v-78.1h20.2c11.8,0,19.6,4.7,19.6,16.5v13.9c0,7.5-3.1,12.2-8.5,14.5
+                    l11.2,33.1H404.6z M388.2,302.7h6.8c4.2,0,7.1-1.6,7.1-7.1v-10.1c0-5.6-2.9-7.1-7.1-7.1h-6.8V302.7z" fill="#fff"/>
+                                                <path class="st0" d="M475.4,329.3c0,12-7.6,16.5-19.4,16.5h-0.4c-11.8,0-19.4-4.4-19.4-16.5v-62.5h12.9v60.5
+                    c0,5.6,2.5,7.1,6.7,7.1c4.2,0,6.7-1.6,6.7-7.1v-60.5h12.9V329.3z" fill="#fff"/>
+                                                <path class="st0" d="M536.5,329.3c0,12-7.8,16.5-19.6,16.5h-0.2c-11.8,0-19.6-4.4-19.6-16.5v-46.8c0-11.6,7.8-16.5,19.6-16.5h0.2
+                    c11.8,0,19.6,4.9,19.6,16.5v9h-12.9v-7c0-5.5-2.7-7.1-6.8-7.1c-4.1,0-6.8,1.7-6.8,7.1v42.8c0,5.5,2.7,7.1,6.8,7.1
+                    c4.1,0,6.8-1.7,6.8-7.1v-8.9h12.9V329.3z" fill="#fff"/>
+                                                <path class="st0" d="M592.1,278.2h-13v66.7h-12.9v-66.7h-13v-11.4h39V278.2z" fill="#fff"/>
+                                                <path class="st0" d="M649,329.3c0,12-7.6,16.5-19.4,16.5h-0.4c-11.8,0-19.4-4.4-19.4-16.5v-62.5h12.9v60.5c0,5.6,2.5,7.1,6.7,7.1
+                    c4.2,0,6.7-1.6,6.7-7.1v-60.5H649V329.3z" fill="#fff"/>
+                                                <path class="st0" d="M700.4,344.9l-9.9-31.1H684v31.1H671v-78.1h20.2c11.8,0,19.6,4.7,19.6,16.5v13.9c0,7.5-3.1,12.2-8.5,14.5
+                    l11.2,33.1H700.4z M684,302.7h6.8c4.2,0,7.1-1.6,7.1-7.1v-10.1c0-5.6-2.9-7.1-7.1-7.1H684V302.7z" fill="#fff"/>
+                                                <path class="st0" d="M289.8,289.5v-5.7c0-4.9-2.8-6.7-6.6-6.7c-3.8,0-6.6,1.8-6.6,6.7v5.4c0,4,1.3,5.8,5,7.9l9.1,5.1
+                    c7.5,4.2,11.9,7.7,11.9,16.1v11.3c0,12-7.5,16.3-19.3,16.3h-0.2c-11.8,0-19.3-4.1-19.3-16.3v-8.4h12.7v6.6c0,4.8,2.8,6.9,6.7,6.9
+                    c3.9,0,6.7-2.1,6.7-6.9v-6.1c0-4-1.2-6-5.1-8.1l-9-5.1c-7.6-4.3-11.9-7.9-11.9-16.1V282c0-11.6,8.5-16.1,19.2-16.1h0.2
+                    c10.7,0,19.2,4.5,19.2,16.1v7.5H289.8z" fill="#fff"/>
+                                                <polygon class="st0" points="732.5,344.9 732.5,266.9 766.7,266.9 766.7,278.2 745.4,278.2 745.4,299.6 763.3,299.6 763.3,311 
+                    745.4,311 745.4,333.5 767,333.5 767,344.9" fill="#fff"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var loginForm = document.getElementById("login_form");
+
+                loginForm.addEventListener("submit", function(event) {
+                    var usernameInput = document.getElementById("username");
+                    var passwordInput = document.getElementById("password");
+
+                    if (!usernameInput.value || !passwordInput.value) {
+                        event.preventDefault();
+                        alert("Username and Password must be filled.");
+                    }
+                });
+            });
+        </script>
+
+    </body>
+</html>
